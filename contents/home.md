@@ -1,8 +1,9 @@
 
 
-[![apple-tang](https://img.shields.io/badge/apple-tang-github-blue?logo=github)](https://github.com/apple-tang)
+[![apple-tang](https://img.shields.io/badge/apple-tang-github?logo=github&logoColor=blue&logoSize=auto&label=apple-tang&labelColor=gray&color=blue)](https://github.com/apple-tang)
 
-He is currently pursuing a Master's Degree in Ocean engineering, at Ocean College , Zhejiang University, China.
+I believe:Bias result from cognitive constraints.\
+I'm currently pursuing a Master's Degree in Ocean engineering, at Ocean College , Zhejiang University, China.
 
 #### Email
 tangdaozhi@zju.edu.cn
