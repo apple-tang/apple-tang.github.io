@@ -9,7 +9,7 @@ I'm currently pursuing a Master's Degree in Ocean engineering, at Ocean College 
 tangdaozhi@zju.edu.cn
 
 #### Education
-M.E., Ocean engineering , China Zhejiang University, 2023—2026 (expected).\
+M.E., college of seience and engineering , China Zhejiang University, 2023—.\
 B.E., Civil engineering , China Hunan University, 2018—2022.
 
 #### Research Interests
