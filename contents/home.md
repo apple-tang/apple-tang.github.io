@@ -3,7 +3,7 @@
 [![apple-tang](https://img.shields.io/badge/apple-tang-github?logo=github&logoColor=blue&logoSize=auto&label=apple-tang&labelColor=gray&color=blue)](https://github.com/apple-tang)
 
 I believe:Bias result from cognitive constraints.\
-I'm currently pursuing a Master's Degree in Ocean engineering, at Ocean College , Zhejiang University, China.
+I'm currently pursuing a PHD at college of seience and engineering , Zhejiang University, China.
 
 #### Email
 tangdaozhi@zju.edu.cn
@@ -15,3 +15,14 @@ B.E., Civil engineering , China Hunan University, 2018—2022.
 #### Research Interests
 OWT
 
+#### Programming Skills
+- Python(numpy\scipy\matplotlib\pandas\pytorch)
+- Matlab
+- C++
+- fortran90
+
+#### hobbies
+- AI painting
+![q版哪吒](../static/assets/img/q版哪吒.png)
+- computer games
+- Fitness
