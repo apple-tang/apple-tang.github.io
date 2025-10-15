@@ -23,6 +23,6 @@ OWT
 
 #### hobbies
 - AI painting
-![q版哪吒](../static/assets/img/q版哪吒.png)
+<img src="../static/assets/img/q版哪吒.png" alt="q版哪吒" width="200">
 - computer games
 - Fitness
