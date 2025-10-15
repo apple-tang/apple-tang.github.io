@@ -60,20 +60,38 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
-    // 添加访问计数器功能
-    function updateVisitorCount() {
-        // 使用CountAPI服务，这里使用你的GitHub用户名作为命名空间
-        const counterName = 'apple-tang-github-io';
-        const apiUrl = `https://api.countapi.xyz/hit/${counterName}/visits`;
+    // 添加访问计数器功能（使用不蒜子服务）
+    function setupVisitorCounter() {
+        // 动态加载不蒜子脚本
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+        script.onload = function() {
+            // 检查不蒜子是否加载成功
+            if (window.busuanzi) {
+                // 直接使用不蒜子的访问次数
+                setTimeout(() => {
+                    const visitCount = document.getElementById('visit-count');
+                    if (visitCount && window.busuanzi.cookie.get) {
+                        const hits = window.busuanzi.cookie.get('busuanzi_visits');
+                        visitCount.textContent = hits || '0';
+                    }
+                }, 500);
+            }
+        };
         
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('visit-count').textContent = data.value;
-            })
-            .catch(error => console.log('计数器加载失败:', error));
+        // 备用方案：使用本地存储计数（如果不蒜子服务不可用）
+        script.onerror = function() {
+            console.log('不蒜子服务加载失败，使用本地计数');
+            let count = parseInt(localStorage.getItem('visitorCount') || '0');
+            count++;
+            localStorage.setItem('visitorCount', count.toString());
+            document.getElementById('visit-count').textContent = count;
+        };
+        
+        document.head.appendChild(script);
     }
     
-    // 调用计数器更新函数
-    updateVisitorCount();
+    // 调用计数器设置函数
+    setupVisitorCounter();
 });
