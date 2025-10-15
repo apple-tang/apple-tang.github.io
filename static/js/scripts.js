@@ -1,5 +1,3 @@
-
-
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'publications', 'awards']
@@ -62,4 +60,20 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
-}); 
+    // 添加访问计数器功能
+    function updateVisitorCount() {
+        // 使用CountAPI服务，这里使用你的GitHub用户名作为命名空间
+        const counterName = 'apple-tang-github-io';
+        const apiUrl = `https://api.countapi.xyz/hit/${counterName}/visits`;
+        
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('visit-count').textContent = data.value;
+            })
+            .catch(error => console.log('计数器加载失败:', error));
+    }
+    
+    // 调用计数器更新函数
+    updateVisitorCount();
+});
