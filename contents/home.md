@@ -25,4 +25,5 @@ OWT
 - AI painting
 <img src="../static/assets/img/q版哪吒.png" alt="q版哪吒" width="200">
 - computer games
+<img src="../static/assets/img/csgo.png" alt="csgo" width="200">
 - Fitness
