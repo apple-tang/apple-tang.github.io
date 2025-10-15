@@ -60,38 +60,40 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
-    // 添加访问计数器功能（使用不蒜子服务）
-    function setupVisitorCounter() {
-        // 动态加载不蒜子脚本
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-        script.onload = function() {
-            // 检查不蒜子是否加载成功
-            if (window.busuanzi) {
-                // 直接使用不蒜子的访问次数
-                setTimeout(() => {
-                    const visitCount = document.getElementById('visit-count');
-                    if (visitCount && window.busuanzi.cookie.get) {
-                        const hits = window.busuanzi.cookie.get('busuanzi_visits');
-                        visitCount.textContent = hits || '0';
-                    }
-                }, 500);
-            }
-        };
+    // 访问计数器功能
+    function initVisitCounter() {
+        const counterElement = document.getElementById('visit-count');
+        if (!counterElement) return;
         
-        // 备用方案：使用本地存储计数（如果不蒜子服务不可用）
-        script.onerror = function() {
-            console.log('不蒜子服务加载失败，使用本地计数');
-            let count = parseInt(localStorage.getItem('visitorCount') || '0');
-            count++;
-            localStorage.setItem('visitorCount', count.toString());
-            document.getElementById('visit-count').textContent = count;
-        };
+        // 使用 CountAPI
+        const namespace = 'apple-tang-website'; // 可以改为您的网站名称
+        const key = 'main-visit-counter';
         
-        document.head.appendChild(script);
+        fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+            .then(response => response.json())
+            .then(data => {
+                counterElement.textContent = data.value.toLocaleString();
+            })
+            .catch(error => {
+                console.error('Error with CountAPI:', error);
+                // 回退到本地存储
+                fallbackToLocalStorage(counterElement);
+            });
     }
-    
-    // 调用计数器设置函数
-    setupVisitorCounter();
+
+    function fallbackToLocalStorage(counterElement) {
+        let visitCount = localStorage.getItem('visitCount');
+        if (visitCount === null) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+        localStorage.setItem('visitCount', visitCount);
+        counterElement.textContent = visitCount;
+    }
+
+    // 在页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        initVisitCounter();
+    });
 });
