@@ -109,12 +109,23 @@ section .main-body{
     }
 }
 
-.parent-container {
+#stats-widget-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 200px;
+  height: 60px;
+  z-index: 1000;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   display: flex;
-  /* 其他Flex属性根据需求调整 */
+  align-items: center;
+  justify-content: center;
 }
-#LA-DATA-WIDGET {
-  flex: 1; /* 组件会填充父容器剩余空间 */
-  /* 或者直接设置一个具体的宽度 */
-  width: 100px;
+
+#stats-widget-container #LA-DATA-WIDGET {
+  width: 100% !important;
+  height: 100% !important;
+  transform: scale(1.2); /* 可选：调整内部组件缩放 */
 }
