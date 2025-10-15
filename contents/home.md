@@ -9,7 +9,7 @@ I'm currently pursuing a PHD at college of seience and engineering , Zhejiang Un
 tangdaozhi@zju.edu.cn
 
 #### Education
-M.E., college of seience and engineering , China Zhejiang University, 2023—.\
+Ph.D., college of seience and engineering , China Zhejiang University, 2023—.\
 B.E., Civil engineering , China Hunan University, 2018—2022.
 
 #### Research Interests
