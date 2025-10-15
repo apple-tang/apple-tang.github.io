@@ -109,8 +109,12 @@ section .main-body{
     }
 }
 
-@media (max-width: 768px) {
-  #LA-DATA-WIDGET {
-    width: 25% !important;
-  }
+.parent-container {
+  display: flex;
+  /* 其他Flex属性根据需求调整 */
+}
+#LA-DATA-WIDGET {
+  flex: 1; /* 组件会填充父容器剩余空间 */
+  /* 或者直接设置一个具体的宽度 */
+  width: 100px;
 }
