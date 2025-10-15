@@ -109,4 +109,8 @@ section .main-body{
     }
 }
 
-
+@media (max-width: 768px) {
+  #LA-DATA-WIDGET {
+    width: 25% !important;
+  }
+}
