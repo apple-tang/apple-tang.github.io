@@ -16,10 +16,10 @@ B.E., Civil engineering , China Hunan University, 2018—2022.
 OWT
 
 #### Programming Skills
-- Python(numpy\scipy\matplotlib\pandas\pytorch)
+- Python(numpy\scipy\matplotlib\pandas\pytorch\[OpenMDAO](https://openmdao.org/))
 - Matlab
-- C++
-- fortran90
+- C++([Opensees](https://opensees.berkeley.edu/))
+- fortran90([OpenFAST](https://openfast.readthedocs.io/en/main/))
 
 #### hobbies
 - AI painting
