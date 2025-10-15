@@ -113,7 +113,7 @@ section .main-body{
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: 200px;
+  width: 100px;
   height: 60px;
   z-index: 1000;
   background: white;
